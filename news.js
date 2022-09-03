@@ -96,6 +96,7 @@ const displayNews=news=>{
         <input type="checkbox" id="my-modal-${data._id}"  class="modal-toggle" />
 <div class="modal modal-bottom sm:modal-middle">
   <div class="modal-box">
+  <img src="${data.thumbnail_url}" alt="Movie">
   <h2 class="card-title">"${data.title}"</h2>
       <p> ${data.details} </p>
     <div class="modal-action">
