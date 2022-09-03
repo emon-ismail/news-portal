@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Daily News</title>
+    
       <!-- daisy ui and tailwind css -->
       <link href="https://cdn.jsdelivr.net/npm/daisyui@2.24.0/dist/full.css" rel="stylesheet" type="text/css" />
       <script src="https://cdn.tailwindcss.com"></script>
@@ -17,10 +18,30 @@
             </div>
             <div class="flex">
               <ul class="menu menu-horizontal p-0">
-                <li><a class="mr-20">News</a></li>
+                <li><a class="mr-20 text-orange-500 border-4">News</a></li>
                 <li tabindex="0">
               </li>
-                <li><a class="mr-20">Blog</a></li>
+                
+ <label for="my-modal-6" class="btn modal-button">Blog</label>
+<input type="checkbox" id="my-modal-6" class="modal-toggle" />
+<div class="modal modal-bottom ">
+  <div class="modal-box">
+    <h3 class="font-bold text-lg">1.Difference between var let and const?</h3>
+    <p class="py-4 text-orange-500">
+      1.VAR:It can be declared without initialization.	LET: It can be declared without initialization.	CONST:It cannot be declared without initialization.</p>
+    <div class="modal-action">
+      <h1>2.difference between arrow function and normal function?</h1>
+      <p class=" text-orange-500">Unlike regular functions, arrow functions do not have their own this . The value of this inside an arrow function remains the same throughout the lifecycle of the function and is always bound to the value of this in the closest non-arrow parent function.</p>
+     
+      <h1>3.What is difference between map and forEach and filter?</h1>
+   <p class=" text-orange-500">
+   Differences between forEach() and map() methods:The forEach() method does not create a new array based on the given array. The map() method creates an entirely new array. The forEach() method returns “undefined“. The map() method returns the newly created array according to the provided callback function.he only difference is the filter() method search through all the elements while find() method search through all the child elements only.</p>
+   <h1>4.Why do we use template string in Javascript?</h1>
+   <p class=" text-orange-500">Template literals provide an easy way to interpolate variables and expressions into strings. The method is called string interpolation</p>
+      <label for="my-modal-6" class="btn">Yay!</label>
+    </div>
+  </div>
+</div>
               </ul>
               <div class="w-10 rounded-full">
                 <img class="mr-10"  src="https://placeimg.com/80/80/people" />
@@ -28,20 +49,44 @@
             </div>
           </div>
     </head>
+    <header> 
+    
     <section>
         <div  class=" flex flex-col md:flex-row"id="news-title-container"></div>
-      <!-- <button onclick="titleload(this)"></button> -->
+     
     </section>
+   
     <section>
+      <div id="count"></div>
+    </section>
+    <h1 class=" ml-10">Sort by View :Default</h1>
+                    
+
+    <section>
+      <div><progress id="spinner" class=" ml-30 bg-white progress w-90  hidden "></progress></div>  
       
-      <!-- <button onclick="handleOnClick()"></button> -->
       <div id="title-click-news"></div>
+
+     
+      
 
       <!-- card -->
      
     </section>
+
+    <div id="found-catagory"></div>
+
     
     <div id="modal-body">
+
+    
+
+    
+      <footer class="footer footer-center p-4 bg-base-300 text-base-content">
+        <div>
+          <p>Copyright © 2022 - All right reserved by emon</p>
+        </div>
+      </footer>
     
 
 <script src="news.js"></script>

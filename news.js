@@ -5,8 +5,12 @@ const loadTitle=()=>{
     .then(data=>displayTitle(data.data.news_category))
 }
 const displayTitle=title=>{
+    
   
     const titleContainer=document.getElementById("news-title-container");
+
+   
+
     for(const titleNews of title){
        
         const titleDiv=document.createElement("div");
@@ -20,6 +24,7 @@ const displayTitle=title=>{
 }
   
 const titleload =(category_id)=>{
+    
     console.log(category_id)
     fetch(`https://openapi.programming-hero.com/api/news/category/0${category_id}`)
     .then(res=>res.json())
@@ -29,6 +34,21 @@ const titleload =(category_id)=>{
  
 const displayNews=news=>{
     const newsContainer = document.getElementById("title-click-news");
+    newsContainer.innerHTML=``;
+    news.sort((a, b) => b.total_view - a.total_view);
+    console.log(news.length)
+    const newsCounter=document.getElementById("count");
+    newsCounter.innerHTML=`
+    <h1 class="ml-10">${(news.length)} News Found </h1>`
+
+
+
+
+
+
+    
+  
+   
     for (const data of news){
      let slicee;
         if(data.details.length>200){
@@ -39,6 +59,7 @@ const displayNews=news=>{
             console.log("details")
         }
         const newsDiv=document.createElement("div");
+
        
         newsDiv.innerHTML=`
         <div class="card card-side bg-white shadow-xl  flex flex-col md:flex-row p-10 mt-10">
@@ -47,7 +68,9 @@ const displayNews=news=>{
           <h2 class="card-title">"${data.title}"</h2>
           <p>${slicee}</p>
           <img class="object-contain h-8 w-6 " src="${data.author.img}" 
-          <p> ${data.author.name}</p>  
+          <p> ${data.author.name?data.author.name :"not found"} </p> 
+          <p> View: ${data.total_view ? data.total_view :"not found"}  M</p> 
+
           <p> ${data.author.published_date}</p>  
           <h1> ${data.rating.number }        <div class="rating">
   <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
@@ -60,11 +83,19 @@ const displayNews=news=>{
           
             
           </div>
-          <button class="btn gap-2  md:btn-sm ">
-  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
- See Details
-</button>
+          <label for="my-modal-${data._id}" class="btn modal-button">See more</label>
         </div>
+        <input type="checkbox" id="my-modal-${data._id}"  class="modal-toggle" />
+<div class="modal modal-bottom sm:modal-middle">
+  <div class="modal-box">
+  <h2 class="card-title">"${data.title}"</h2>
+      <p> ${data.details} </p>
+    <div class="modal-action">
+      <label for="my-modal-${data._id}"  class="btn">cancel</label>
+    </div>
+  </div>
+</div>
+
         
       </div>
       
@@ -74,6 +105,8 @@ const displayNews=news=>{
 
     }
 }
+
+// document.getElementById("btn-search").addE
 
 
 
