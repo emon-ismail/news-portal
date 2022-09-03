@@ -3,6 +3,13 @@ const loadTitle=()=>{
     fetch("https://openapi.programming-hero.com/api/news/categories")
     .then(res=>res.json())
     .then(data=>displayTitle(data.data.news_category))
+    .catch(data=>{
+        alert('Catch is ignored, because there are no errors');
+        
+    })
+   
+    
+    
 }
 const displayTitle=title=>{
     
@@ -17,6 +24,7 @@ const displayTitle=title=>{
         titleDiv.innerHTML=`
         <button onclick="titleload(${titleNews.category_id})"class="btn mx-3 fw-bold " type="submit">
         ${titleNews.category_name}</button>`;
+        
 
          titleContainer.appendChild(titleDiv);
     }
@@ -24,7 +32,7 @@ const displayTitle=title=>{
 }
   
 const titleload =(category_id)=>{
-    
+    showSpin(true);
     console.log(category_id)
     fetch(`https://openapi.programming-hero.com/api/news/category/0${category_id}`)
     .then(res=>res.json())
@@ -102,13 +110,27 @@ const displayNews=news=>{
 
         `
         newsContainer.appendChild(newsDiv);
+        
 
-    }
+    };
+    showSpin(false);
 }
 
 // document.getElementById("btn-search").addE
 
-
+const showSpin=isload=>{
+    const showSpinn= document.getElementById("spinner");
+    if(isload)
+    {
+        showSpinn.classList.remove("hidden");
+        console.log(isload);
+        // showSpinn.classList.add("visible");
+        
+    }
+    else{
+        showSpinn.classList.add("hidden");
+    }
+}
 
 
 
