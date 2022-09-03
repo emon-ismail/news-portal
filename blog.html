@@ -4,9 +4,95 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=], initial-scale=1.0">
-    <title>Document</title>
+    <title>Blog</title>
+    
+      <!-- daisy ui and tailwind css -->
+      <link href="https://cdn.jsdelivr.net/npm/daisyui@2.24.0/dist/full.css" rel="stylesheet" type="text/css" />
+      <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
+    <head>
+        <div class="navbar bg-base-100 shadow-lg">
+            <div class="flex-1">
+              <a class="btn btn-ghost normal-case text-xl">The Daily News</a>
+            </div>
+            <div class="flex">
+              <ul class="menu menu-horizontal p-0">
+                <button class="btn modal-button"><a href="index.html"  target="_blank">News</a></button>
+                <li tabindex="0">
+              </li>
+              
+              
+            <button class="btn modal-button text-orange-500"><a href="blog.html"  target="_blank">Blog</a></button>
+
+ <!-- <label    class="btn modal-button"  <a href="blog.html"></a>  >Blog</label> -->
+
+
+              </ul>
+              <div class="w-10 rounded-full">
+                <img class="mr-10"  src="https://placeimg.com/80/80/people" />
+              </div>
+            </div>
+          </div>
+    </head>
     
+    
+<div class="grid mb-8 rounded-lg border border-gray-200 shadow-sm dark:border-gray-700 md:mb-12 md:grid-cols-2">
+    <figure class="flex flex-col justify-center items-center p-8 text-center bg-white rounded-t-lg border-b border-gray-200 md:rounded-t-none md:rounded-tl-lg md:border-r dark:bg-gray-800 dark:border-gray-700">
+        <blockquote class="mx-auto mb-4 max-w-2xl text-gray-500 lg:mb-8 dark:text-gray-400">
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">1.Difference between var let and const?</h3>
+            <p  class="my-10 font-light text-orange-500  ">VAR:It can be declared without initialization.	LET: It can be declared without initialization.	CONST:It cannot be declared without initialization.</p>
+        </blockquote>
+        <figcaption class="flex justify-center items-center space-x-3">
+      
+            <div class="space-y-0.5 font-medium dark:text-white text-left">
+            
+            </div>
+        </figcaption>    
+    </figure>
+    <figure class="flex flex-col justify-center items-center p-8 text-center bg-white rounded-tr-lg border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+        <blockquote class="mx-auto mb-4 max-w-2xl text-gray-500 lg:mb-8 dark:text-gray-400">
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">2.difference between arrow function and normal function? </h3>
+            <p class="my-4 font-light text-orange-500 ">Regular functions created using function declarations or expressions are constructible and callable. Since regular functions are constructible, they can be called using the new keyword. However, the arrow functions are only callable and not constructible, i.e arrow functions can never be used as constructor functions.</p>
+        </blockquote>
+        <figcaption class="flex justify-center items-center space-x-3">
+          
+            <div class="space-y-0.5 font-medium dark:text-white text-left">
+               
+            
+            </div>
+        </figcaption>    
+    </figure>
+    <figure class="flex flex-col justify-center items-center p-8 text-center bg-white rounded-bl-lg border-b border-gray-200 md:border-b-0 md:border-r dark:bg-gray-800 dark:border-gray-700">
+        <blockquote class="mx-auto mb-4 max-w-2xl text-gray-500 lg:mb-8 dark:text-gray-400">
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">3.What is difference between map and forEach and filter?</h3>
+            <p class="my-4 font-light  text-orange-500 ">The main difference between map and forEach is that the map method returns a new array by applying the callback function on each element of an array, while the forEach method doesn't return anything. You can use the forEach method to mutate the source array, but this isn't really the way it's meant to be used.map creates a new array by transforming every element in an array individually. filter creates a new array by removing elements that don't belong. reduce , on the other hand, takes all of the elements in an array and reduces them into a single value. Just like map and filter , reduce is defined on Array.</p>
+        </blockquote>
+        <figcaption class="flex justify-center items-center space-x-3">
+           
+            <div class="space-y-0.5 font-medium dark:text-white text-left">
+                
+            </div>
+        </figcaption>    
+    </figure>
+    <figure class="flex flex-col justify-center items-center p-8 text-center bg-white rounded-b-lg border-gray-200 md:rounded-br-lg dark:bg-gray-800 dark:border-gray-700">
+        <blockquote class="mx-auto mb-4 max-w-2xl text-gray-500 lg:mb-8 dark:text-gray-400">
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">4.Why do we use template string in Javascript?</h3>
+            <p class="my-4 font-light  text-orange-500 ">Template strings are a powerful feature of modern JavaScript released in ES6. It lets us insert/interpolate variables and expressions into strings without needing to concatenate like in older versions of JavaScript. It allows us to create strings that are complex and contain dynamic elements.</p>
+        </blockquote>
+        <figcaption class="flex justify-center items-center space-x-3">
+            
+            <div class="space-y-0.5 font-medium dark:text-white text-left">
+               
+            </div>
+        </figcaption>    
+    </figure>
+</div>
+
+<footer class="footer footer-center p-4 bg-base-300 text-base-content">
+    <div>
+      <p>Copyright © 2022 - All right reserved by emon</p>
+    </div>
+  </footer>
 </body>
 </html>
