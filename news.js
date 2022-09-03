@@ -22,7 +22,7 @@ const displayTitle=title=>{
        
         const titleDiv=document.createElement("div");
         titleDiv.innerHTML=`
-        <button onclick="titleload(${titleNews.category_id})"class="btn mx-3 fw-bold " type="submit">
+        <button onclick="titleload(${titleNews.category_id})"class="btn mx-3 fw-bold  text-orange-500" type="submit">
         ${titleNews.category_name}</button>`;
         
 
